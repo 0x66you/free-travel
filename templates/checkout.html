@@ -1,0 +1,504 @@
+{% extends 'baseafter.html' %}
+{% load static %}
+{% block inhead %}
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'loginfonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginutil.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginmain.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+    .column5{
+        float:left;
+        width:5%;
+    }
+    .column15{
+        float:left;
+        width:15%;
+    }
+    .column17{
+        float:left;
+        width:17%;
+    }
+    .column18{
+        float:left;
+        width:18%;
+    }
+    .column19{
+        float:left;
+        width:19%;
+    }
+    .column20{
+        float:left;
+        width:20%;
+    }
+    .column25{
+        float:left;
+        width:25%;
+    }
+    .column26{
+        float:left;
+        width:26%;
+    }
+    .column27 {
+        float:left;
+        width:27%;
+    }
+    .column30 {
+        float:left;
+        width:30%;
+    }
+    .column32 {
+        float:left;
+        width:32%;
+    }
+    .column35 {
+        float:left;
+        width:35%;
+    }
+    .column38 {
+        float:left;
+        width:38%;
+    }
+    .column40{
+        float:left;
+        width:40%;
+    }
+    .column45{
+        float:left;
+        width:45%;
+    }
+    .column56 {
+        float:left;
+        width:56%;
+    }
+    .column60{
+        float:left;
+        width:60%;
+    }
+    .column70{
+        float:left;
+        width:70%;
+    }
+    .column75{
+        float:left;
+        width:75%;
+    }
+    .column100 {
+        float: left;
+        width: 100%;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    label{
+  vertical-align: middle;
+}
+
+input[type="checkbox"]{
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:#999999;
+    font-family:Arial, sans-serif;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 2px 0 0;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+input[type="checkbox"]:checked + label span {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
+/* ==================== */
+input[type="radio"]{
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color:#999999;
+    font-family:Arial, sans-serif;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+input[type="radio"]:checked + label span {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
+SELECT {
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+    box-shadow: none;
+}
+input::-webkit-calendar-picker-indicator {
+    margin-right: 10px;
+    margin-left:0;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login101-more"
+                style="background-image: url('../static/images/lisanto-Q01hPiKTAIQ-unsplash.jpeg');">
+            </div>
+            <form id="checkoutform" style="width:700px;margin-left:auto;margin-right:auto;background:#fff;" class="login101-form validate-form" action="." method="POST" >
+                {% csrf_token %}
+                <p style="text-align:center;margin:5px auto 0;">
+                    <img src="{% static 'images/icons8-shark-50.png' %}" style="filter:invert(100%);width:35px;">
+                </p>
+                <span style="font-size:50px;" class="login100-form-title p-b-20">
+                    - 客製化體驗 -
+                </span>
+                <!-- (表單) chosenplan 選擇方案(1234)-->
+                <!-- (表單) adults 成人數量 (12345)-->
+                <!-- (表單) children 成人數量 (01234)-->
+                <!-- (表單) seniors (01234)成人數量 -->
+                <div class="row" style="background:#ebf3ff;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                    <div class="column" style="padding:5px 0 0 15px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">請選擇方案</div>
+                        <div>
+                            <select class="wrap-input101" name="chosenplan"  style="padding-bottom:7px;padding-left:26px;background-color: #fff;;">
+                                <option selected="selected" disabled="disabled" value="" style="display: none;">-- 請選擇 --</option>
+                                {% for plan in plans %}
+                                <option value="{{forloop.counter}}">{{ plan }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column15" style="padding:5px 0 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">成人</div>
+                        <div>
+                            <select class="wrap-input101" name="adults"  style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                <option style="margin-left:10px;" value="1" selected="selected">1</option>
+                                <option style="margin-left:10px;" value="2">2</option>
+                                <option style="margin-left:10px;" value="3">3</option>
+                                <option style="margin-left:10px;" value="4">4</option>
+                                <option style="margin-left:10px;" value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column15" style="padding:5px 0 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">孩童</div>
+                        <div>
+                            <select class="wrap-input101" name="children" style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                <option style="margin-left:10px;" value="0" selected="selected">0</option>
+                                <option style="margin-left:10px;" value="1">1</option>
+                                <option style="margin-left:10px;" value="2">2</option>
+                                <option style="margin-left:10px;" value="3">3</option>
+                                <option style="margin-left:10px;" value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column15" style="padding:5px 0 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">老人</div>
+                        <div>
+                            <select class="wrap-input101 validate-input" name="seniors" style="padding-bottom:7px;padding-left:20px;background-color:#fff;"  data-validate="此欄位必填!">
+                                <option style="margin-left:10px;" value="0" selected="selected">0</option>
+                                <option style="margin-left:10px;" value="1">1</option>
+                                <option style="margin-left:10px;" value="2">2</option>
+                                <option style="margin-left:10px;" value="3">3</option>
+                                <option style="margin-left:10px;" value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- (表單) trainStartCity 起始城市 -->
+                <!-- (表單) trainStartStation 起始車站 -->
+                <!-- (表單) trainStartTime 起始時間 -->
+                <div class="row" style="background:#e7fde9;">
+                    <div class="column30" style="padding:5px 5px 0 15px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">您所在區域</div>
+                        <div>
+                            <select name="trainStartCity" class="wrap-input101" style="padding-bottom:7px;padding-left:26px;padding-right:10px;background-color:#fff;">
+                                {% for i in traincities %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column30" style="padding:5px 5px 0 0;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">&nbsp;</div>
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;" class="input100" type="text" name="trainStartStation">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">車站名稱<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column35" style="padding:5px 15px 0 0;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">出發時間</div>
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input style="font-size:12px;" class="input100" type="datetime-local" name="trainStartTime">
+                        </div>
+                    </div>
+                </div>
+                <!-- (表單) trainEndCity 終點城市 -->
+                <!-- (表單) trainEndStation 終點車站 -->
+                <!-- (表單) trainPayMethod 車票付款方式 -->
+                <div class="row" style="background:#e7fde9;">
+                    <div class="column30" style="padding:5px 5px 0 15px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">您的目的地</div>
+                        <div>
+                            <select name="trainEndCity" class="wrap-input101" style="padding-bottom:7px;padding-left:26px;background-color:#fff;">
+                                {% for i in traincities reversed%}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column30" style="padding:5px 0 0 0;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">&nbsp;</div>
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;" class="input100" type="text" name="trainEndStation">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">車站名稱<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column40" style="padding:5px 15px 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">車票付款</div>
+                        <div style="background:#fff;">
+                            <select class="wrap-input101" name="trainPayMethod" style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                {% for pm in paymentMethods %}
+                                <option style="margin-left:10px;" value="{{ forloop.counter0 }}">{{ pm }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- (表單) staydays 入住天數 -->
+                <!-- (表單) distanceFromStation 距離 -->
+                <div class="row" style="background:#ffebeb;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#fcb4b4;">房宿相關 (不住宿可略過)</div>
+                </div>
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column30" style="padding:5px 5px 0 15px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">入住天數</div>
+                        <div>
+                            <select class="wrap-input101" name="staydays" style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                <option selected="selected" disabled="disabled" value="" style="display: none;">-- 請選擇 --</option>
+                                {% for day in stayDays %}
+                                <option style="margin-left:10px;" value="{{forloop.counter}}">{{ day }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column25" style="padding:5px 0 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">距離市中心距離</div>
+                        <div>
+                            <select class="wrap-input101" name="distanceFromStation" style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                {% for dis in distanceFromHotel %}
+                                <option style="margin-left:10px;" value="{{ forloop.counter0 }}">{{ dis }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column40" style="padding:5px 15px 0 5px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">房宿付款</div>
+                        <div>
+                            <select class="wrap-input101" name="paymentHotem" style="padding-bottom:7px;padding-left:20px;background-color:#fff;">
+                                <option style="margin-left:10px;" value="0">無需訂金－到店付款</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- 特殊需求 specialsNeeds -->
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column100" style="margin-left:15px;">
+                        <div style="padding-left:5px;padding-bottom:5px;font-size:12px;color:#a30000;">特殊需求</div>
+                        <div style="padding-left:10px;padding-bottom:5px;width:fit-content;background:#fff;" class="wrap-input101">
+                            <input type="checkbox" id="handicap" name="handicap">
+                            <label for="handicap" style="margin-right:10px;"><span></span>{{specialNeeds.handicap}}</label>
+                            <input type="checkbox" id="wifi" name="wifi">
+                            <label for="wifi" style="margin-right:10px;"><span></span>{{specialNeeds.wifi}}</label>
+                            <input type="checkbox" id="nosmoke" name="nosmoke">
+                            <label for="nosmoke" style="margin-right:10px;"><span></span>{{specialNeeds.nosmoke}}</label>
+                            <input type="checkbox" id="breakfast" name="breakfast">
+                            <label for="breakfast" style="margin-right:10px;"><span></span>{{specialNeeds.breakfast}}</label>
+                        </div>       
+                    </div>
+                </div>
+
+                <!-- (註冊) mCard 信用卡卡號 -->
+                <!-- (註冊) mSafe 安全碼 -->
+                <div class="row" style="background:#ebf3ff;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#bec4ce;">我們將從您的卡片扣款，請確認資料無誤！</div>
+                </div>
+                <div class="row" style="background:#ebf3ff;">
+                    <div class="column45" style="padding:5px 0 0 15px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" class="input100" type="tel" 
+                            id="mCard" name="mCard" maxlength="19"
+                            oninput="this.value = this.value.replace(/[^0-9-.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            pattern="^4[0-9]{3}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+                            value="{{ memberuser.mCard }}">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">信用卡卡號<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column25" style="padding:5px 0 0 5px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" class="input100" type="password" name="mSafe" id="mSafe"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="3" value="{{ memberuser.mSafe }}">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">CVC安全碼<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column30" style="padding:5px 15px 0 5px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input  autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" 
+                                    class="input100" type="text" name="creditName" id="creditName" value="{{ memberuser.creditName }}">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">持卡人姓名<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- (註冊) creditmonth 卡片有效日期(月份) -->
+                <!-- (註冊) credityear 卡片有效日期(年份) -->
+                <!-- (註冊) creditName 持卡人姓名 -->
+                <div class="row" style="background:#ebf3ff;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#bec4ce;">有效期限</div>
+                </div>
+                <div class="row" style="background:#ebf3ff;margin-bottom:5px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+                    <div class="column20" style="padding:5px 10px 0 15px;">
+                        <select name="creditmonth" class="wrap-input101" style="padding-bottom:7px;padding-left:22px;background-color:#fff;">
+                            {% for i in creditmonthlist %}
+                                {% if memberuser.creditmonth == i %}
+                                <option value="{{i}}" selected="selected">{{i}}</option>
+                                {% else %}
+                                <option value="{{i}}">{{i}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="column5">
+                        <div style="padding-top:5px;font-size:25px;text-align:center;color:#bec4ce;">/</div>
+                    </div>
+                    <div class="column25" style="padding:5px 0 0 10px;">
+                            <select name="credityear" class="wrap-input101" style="padding-bottom:7px;padding-left:22px;background-color:#fff;">
+                                {% for i in credityearlist %}
+                                    {% if memberuser.credityear == i %}
+                                    <option value="{{i}}" selected="selected">{{i}}</option>
+                                    {% else %}
+                                    <option value="{{i}}">{{i}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                    </div>
+                </div>
+                {% if errornum == 1 %}
+					<div style="color:red;font-size:12px;margin:0 0 5px 10px;">{{ message }}</div>
+					{% elif errornum == 0 %}
+					<div style="display:none;"></div>
+					{% endif %}
+                <div class="row">
+                    <div class="column" style="padding:0 10px;">
+                        <div style="margin-bottom:15px;" class="container-login100-form-btn">
+                            <a id="formsend" style="font-weight:bold;color:#1d9bf0;" type="submit" class="login100-form-btn">確認送出</a>
+                        </div>
+                    </div>
+                    <div class="column" style="padding:0 10px;"><div class="container-login100-form-btn">
+                    <input style="font-weight:bold;" class="login100-form-btn login100down-btn" value="清除重填" type="reset">
+                </div></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %} "></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'js/loginmain.js' %} "></script>
+<script>
+    $('#mCard').keyup(function() {
+      let txt = $(this).val().split("-").join(""); // remove hyphens
+      if (txt.length > 0) {
+        txt = txt.match(new RegExp('.{1,4}', 'g')).join("-");
+      }
+      $(this).val(txt);
+    });
+    document.getElementById("formsend").addEventListener("click",function() {
+        document.getElementById("checkoutform").submit();
+    }); 
+</script>
+<script type="text/javascript">
+    $(document).ready( function(){
+    // document.getElementById("creditName").focus();
+    // document.getElementById("mSafe").focus();
+    setTimeout(function() { 
+        $('#mCard').focus();
+        $('#mSafe').focus();
+        $('#creditName').focus();
+        $('#creditName').blur();
+    }, 0.5);
+})
+
+</script>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'baseafter.html' %}
+	{% load static %}
+	{% block inhead %}
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginfonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/loginutil.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/loginmain.css' %}">
+<!--===============================================================================================-->
+	{% endblock %}
+
+	{% block content %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form name="loginform" style="background:#fff;" class="login100-form validate-form" action="." method="POST">
+					{% csrf_token %}
+					<p style="text-align:center;">
+						<img src="{% static 'images/icons8-shark-50.png' %}" style="filter:invert(100%);width:35px;">
+					</p>
+					
+					<span style="font-size:50px;" class="login100-form-title p-b-30">
+						準備出發。
+					</span>
+
+					<!-- （登入） name = email 電子郵件 -->
+					<div class="wrap-input100 validate-input" data-validate = "此欄位必填(信箱): ex@abc.xyz">
+						<input autocomplete="off" style="padding-left:24px;font-weight: bold;" class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">輸入電郵信箱</span>
+					</div>
+					
+					<!-- （登入）name = password 密碼 -->
+					<div style="margin-bottom:20px;" class="wrap-input100 validate-input" data-validate="此欄位必填(密碼)">
+						<input autocomplete="off" style="padding-left:24px;font-weight: bold;" class="input100" type="password" name="password">
+						<span class="focus-input100"></span>
+						<span class="label-input100">輸入密碼</span>
+					</div>
+					{% if errornum == 1 %}
+					<div style="color:red;font-size:12px;margin-left:10px;">{{ message }}</div>
+					{% elif errornum == 0 %}
+					<div style="display:none;"></div>
+					{% endif %}
+			
+					<div style="margin-bottom:15px;" class="container-login100-form-btn">
+						<input style="font-weight:bold;" type="submit" class="login100-form-btn" value="登入" onclick="run()">
+					</div>
+				
+					<div class="container-login100-form-btn">
+						<button type="button" class="login100-form-btn login100down-btn" onclick="window.location='/register/' ">
+							<strong>使用電子郵件註冊</strong>
+						</button>
+					</div>
+				</form>	
+
+				
+				<div class="login100-more" style="background-image: url('../static/images/joel-fulgencio-FouVQ5dYY6g-unsplash.jpeg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function submitForm(){
+				document.loginform.submit();
+			}
+		function resetForm(){
+		// some code
+			document.loginform.reset();
+		}
+		function run() {
+			$.ajax({
+				url:submitForm(),
+			success:function(){
+			resetForm();
+			}
+			})
+		}
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %} "></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/loginmain.js' %} "></script>
+	{% endblock %}
+<!-- email, password -->

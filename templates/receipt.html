@@ -1,0 +1,124 @@
+{% extends 'basereceipt.html' %}
+
+{% block transport %}
+    {% if chosenplan == "1" or chosenplan == "2" or chosenplan == "4" %}
+    <p style="font-size:10px;font-family:pixel;font-weight:bold;text-align:center;">---------------------- <span style="font-family:SF-Pro-Text-Regular;">台鐵車票</span> ----------------------</p>
+    <div class="transactionDetails bold"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;">
+        <div class="detail">{{ journey }}</div>
+    </div>
+    <div class="transactionDetails"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;">
+        <div class="detail"><div>車次 {{ trainname }} <span style="font-family:pixel">{{ trainnumber }}</span>&nbsp;全票&nbsp;<span style="font-family:pixel">{{ adults }}</span>&nbsp;孩童&nbsp;<span style="font-family:pixel">{{ children }}</span>&nbsp;敬老&nbsp;<span style="font-family:pixel">{{ seniors }}</span></div>
+        <div style="margin-top:11px;">訂票代碼&emsp;<span style="font-family:pixel">{{ ticketid }}</span></div></div>
+    </div>
+    <div class="transactionDetails"
+    style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;margin-bottom:20px;">
+        <div class="detail">銷售時間&emsp;<span style="font-family:pixel;">{{dt_string}}</span></div>
+    </div>
+    {% if adults > 0 %}
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">全票 x {{ adults }}</div>
+        <div class="detail">{{ fullprice }}</div>
+    </div>
+    {% endif %}
+    {% if children > 0 %}
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">孩童 x {{ children }}</div>
+        <div class="detail">{{ childprice }}</div>
+    </div>
+    {% endif %}
+    {% if seniors > 0 %}
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">敬老 x {{ seniors }}</div>
+        <div class="detail">{{ seniorprice }}</div>
+    </div>
+    {% endif %}
+    <div class="paymentDetails" style="padding-bottom:3px;font-size:11px;border-bottom:1px solid #ccc;">
+        <div class="detail" style="font-family:SF-Pro-Text-Regular;">系統服務費</div>
+        <div class="detail">15</div>
+    </div>
+    <div class="paymentDetails" style="margin-top:5px;">
+        <div class="detail" style="font-size:12px;font-family:SF-Pro-Text-Regular;font-weight:bold;">總計</div>
+        <div class="detail" style="font-size:12px;font-weight:bold;">NT$ {{totalplustip}}</div>
+    </div>
+    <div class="creditDetails">
+        {% for seat in seats %}
+        <p style="font-size:10px;font-family:pixel;margin-bottom:0;margin-top:0;margin-bottom:0;">Car. {{seat.car}}車&emsp;&emsp;************&emsp;Seat. {{seat.num}}號</p>
+        {% endfor %}
+        <p style="font-size:10px;font-family:pixel;margin-bottom:0;margin-top:10px;"><span style="font-family:SF-Pro-Text-Regular;">臺鐵局客服專線</span> # 0800-765-888</p>
+        <p style="font-size:10px;font-family:SF-Pro-Text-Regular;margin:0;">持優待票者，應備妥身分證名文件以備檢查。</p>
+    </div>
+    {% elif chosenplan == "3" %}
+    <p style="font-size:10px;font-family:pixel;font-weight:bold;text-align:center;">---------------------- <span style="font-family:SF-Pro-Text-Regular;">高鐵車票</span> ----------------------</p>
+    <div class="transactionDetails bold"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;">
+        <div class="detail">{{ thsrname }}</div>
+    </div>
+    <div class="transactionDetails"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;">
+        <div class="detail">車次 高鐵 <span style="font-family:pixel">{{ trainnumber }}</span>&nbsp;全票&nbsp;<span style="font-family:pixel">{{ adults }}</span>&nbsp;孩童&nbsp;<span style="font-family:pixel">{{ children }}</span>&nbsp;敬老&nbsp;<span style="font-family:pixel">{{ seniors }}</span></div>
+    </div>
+    <div class="transactionDetails"
+    style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;margin-bottom:20px;">
+        <div class="detail">銷售時間&emsp;<span style="font-family:pixel;">{{dt_string}}</span></div>
+    </div>
+    {% if adults > 0 %}
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">全票 x {{ adults }}</div>
+        <div class="detail">{{ adultPrice }}</div>
+    </div>
+    {% endif %}
+    {% if children > 0 or seniors > 0 %}
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">優待票 x {{ childrenPlusSeniors }}</div>
+        <div class="detail">{{ childrenPlusSeniorsprice }}</div>
+    </div>
+    {% endif %}
+    <div class="paymentDetails" style="padding-bottom:3px;font-size:11px;border-bottom:1px solid #ccc;">
+        <div class="detail" style="font-family:SF-Pro-Text-Regular;">系統服務費</div>
+        <div class="detail">15</div>
+    </div>
+    <div class="paymentDetails" style="margin-top:5px;">
+        <div class="detail" style="font-size:12px;font-family:SF-Pro-Text-Regular;font-weight:bold;">總計</div>
+        <div class="detail" style="font-size:12px;font-weight:bold;">NT$ {{totalplustip}}</div>
+    </div>
+    <div class="creditDetails">
+        <p style="font-size:10px;font-family:pixel;margin-bottom:0;margin-top:10px;"><span style="font-family:SF-Pro-Text-Regular;">台灣高鐵客服專線</span> # 4066-3000</p>
+        <p style="font-size:10px;font-family:SF-Pro-Text-Regular;margin:0;">持優待票者，應備妥身分證名文件以備檢查。</p>
+    </div>
+    {% endif %}
+{% endblock %}
+{% block hotel %}   
+    {% if chosenplan == "1" or chosenplan == "2" or chosenplan == "3" %}
+    <p style="font-size:10px;font-family:pixel;font-weight:bold;text-align:center;">---------------------- <span style="font-family:SF-Pro-Text-Regular;">住宿資訊</span> ----------------------</p>
+    <div class="transactionDetails bold"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;">
+        <div class="detail"><span>住宿名稱</span>&emsp;【{{hoteltype}}】{{hotelname}}</div>
+    </div>
+    <div class="transactionDetails"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;">
+        <div class="detail">入住時間&emsp;<span style="font-size:10px;">{{checkindate}} {{checkintime}}</span></div>
+    </div>
+    <div class="transactionDetails"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;">
+        <div class="detail">退房時間&emsp;<span style="font-size:10px;">{{checkoutdate}} {{checkouttime}}</span></div>
+    </div>
+    <div class="transactionDetails"
+        style="font-family:SF-Pro-Text-Regular;font-size:12px;font-weight:bold;margin-bottom:20px;">
+        <div class="detail">客房類型&emsp;{{roomtype}}({{peoplePerRoom}}人) x{{howManyRooms}}</div>
+    </div>
+    <div class="paymentDetails" style="font-size:11px;font-family:SF-Pro-Text-Regular;">
+        <div class="detail">價格 ({{people}}位住客)</div>
+        <div class="detail">{{ price }}</div>
+    </div>
+    <div class="paymentDetails" style="margin-top:5px;">
+        <div class="detail" style="font-size:12px;font-family:SF-Pro-Text-Regular;font-weight:bold;">總計</div>
+        <div class="detail" style="font-size:12px;font-weight:bold;">NT$ {{price}}</div>
+    </div>
+    <div class="creditDetails">
+        <p style="font-size:10px;font-family:pixel;margin-bottom:0;margin-top:10px;"><span class="bold" style="font-family:SF-Pro-Text-Regular;">顯示價格即為您需支付給住宿的總價。</p>
+        <p class="bold" style="font-size:10px;font-family:SF-Pro-Text-Regular;margin:0;">如果您取消訂單，住宿方可能仍會向您收取相關稅費。</p>
+    </div>
+    {% endif %}
+{% endblock %}

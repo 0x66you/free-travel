@@ -1,0 +1,249 @@
+{% extends 'baseafter.html' %}
+{% load static %}
+{% block inhead %}
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'loginfonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginutil.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginmain.css' %}">
+<!--===============================================================================================-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: pixel;
+        src: url("{% static '/fonts/pixel.ttf' %}");
+    }
+
+    .container {
+        background: #f1f1f1;
+        padding: 20px 10px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .receipt {
+        width: 300px;
+        height: 100%;
+        background: #fff;
+        margin: 0 auto;
+        box-shadow: 5px 5px 19px #ccc;
+        padding: 10px;
+    }
+
+    .logo {
+        text-align: center;
+        padding: 20px;
+        font-family: aoyagireisyosimo_ttf_2_01;
+        font-weight: bold;
+    }
+
+    .barcode {
+        font-family: 'Libre Barcode 128', cursive;
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .address {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .transactionDetails {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px 10px;
+    }
+
+    .transactionDetails .detail {
+        text-transform: uppercase;
+    }
+
+    .centerItem {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+
+    .survey {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .survey .surveyID {
+        font-size: 20px;
+    }
+
+    .paymentDetails {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 150px;
+    }
+
+    .creditDetails {
+        margin: 10px auto;
+        width: 230px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .receiptBarcode {
+        margin: 0;
+        text-align: center;
+    }
+
+    .returnPolicy {
+        margin: 10px 20px;
+        width: 220px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .coupons {
+        margin-top: 20px;
+    }
+
+    .tripSummary {
+        margin: auto;
+        width: 255px;
+    }
+
+    .tripSummary .item {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 220px;
+    }
+
+    .feedback {
+        margin: 20px auto;
+    }
+
+    .feedback h3.clickBait {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .feedback h4.web {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .feedback .break {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .couponContainer {
+        border-top: 1px dashed #1f1f1f;
+        margin-bottom: 20px;
+    }
+
+    .couponContainer .discount {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .couponContainer .discountDetails {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .couponContainer .barcode {
+        margin: 10px 0 0;
+    }
+
+    .couponContainer .legal {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .couponContainer .barcodeID {
+        margin-bottom: 8px;
+    }
+
+    .couponContainer .expiration {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .couponContainer .couponBottom {
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-more"
+                style="background-image: url('../static/images/vicky-ng-Vl7GOuUHQRw-unsplash.jpeg');">
+            </div>
+            <div class="login102-form" style="padding:0;">
+                <div id="showScroll" class="container">
+                    <div class="receipt">
+                        <h4 class="logo" style="font-size:12px;margin-bottom:0;">- 訂單明細 -</h4>
+                        <h3 class="logo" style="margin-top:0;font-family:aoyagireisyosimo_ttf_2_01;">説走就走</h3>
+                        <div style="font-size:11px;font-family:pixel;font-weight: bold;" class="address">
+                            No. 24, Zhongshan 1st St., Zhubei City, <br />
+                            Hsinchu County 302081 STORE: 28795973
+                        </div>
+
+                        <div class="transactionDetails" style="font-family:pixel;font-size:10px;">
+                            <div class="detail">Reg#{{random1}}</div>
+                            <div class="detail">TRN#{{random2}}</div>
+                            <div class="detail">CSHR#{{random3}}</div>
+                            <div class="detail">STR#{{random4}}</div>
+                        </div>
+                        <div class="transactionDetails" style="font-family:pixel;font-size:12px;font-weight: bold;">
+                            Helped by: SharksLccnet
+                        </div>
+                        <div class="centerItem bold" style="font-family:pixel;font-size:10px;font-weight:bolder">
+                            <div class="item">Credit Card #: **** **** **** {{mCardLast4}}</div>
+                        </div>
+                        {% block transport %}{% endblock %}
+                        {% block hotel %}{% endblock %}
+                        <p style="font-size:10px;font-family:pixel;font-weight:bold;text-align:center;margin:0;">
+                            -----------------------------------------------------</p>
+                        <div class="receiptBarcode">
+                            <div class="barcode" style="margin-bottom:0;padding-bottom:0;">
+                                {{barcode}}
+                            </div>
+                            <p style="font-size:10px;font-family:SF-Pro-Text-Regular;margin:0;">
+                                備註:本明細不得作為搭車或入住憑證，<br>搭車請持正式票券，入住請洽飯店櫃檯。</P>
+            </div>
+        </div>
+    </div>
+</div>
+
+            {% endblock %}

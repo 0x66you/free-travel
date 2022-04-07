@@ -1,0 +1,377 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block inhead %}
+<style>
+@font-face {
+  font-family: pixel;
+  src: url("{% static '/fonts/pixel.ttf' %}");
+}  
+</style>
+
+{% endblock %}
+{% block content %}
+<section class="u-align-center u-clearfix u-image u-section-1" id="carousel_2d1f" data-image-width="2400"
+  data-image-height="1350">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-group-1"
+      data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X">
+      <div class="u-container-layout">
+        <h1 class="u-align-center u-custom-font u-text u-text-body-color u-title u-text-1" data-animation-name="flipIn"
+          data-animation-duration="1000" data-animation-direction="X">説走就走</h1>
+        {% if request.user.is_authenticated %}
+        <a href="/checkout/"
+          class="u-border-none u-btn u-button-style u-none u-text-hover-grey-75 u-text-palette-1-base u-btn-1">立即啟程<span
+            class="u-icon u-opacity u-opacity-60 u-text-palette-1-base u-icon-1"><svg class="u-svg-content"
+              viewBox="0 -32 426.66667 426" style="width: 1em; height: 1em;">
+              <path
+                d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0">
+              </path>
+              <path
+                d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0">
+              </path>
+            </svg><img></span>
+        </a>
+        {% else %}
+        <a href="/login/"
+          class="u-border-none u-btn u-button-style u-none u-text-hover-grey-75 u-text-palette-1-base u-btn-1">立即啟程<span
+            class="u-icon u-opacity u-opacity-60 u-text-palette-1-base u-icon-1"><svg class="u-svg-content"
+              viewBox="0 -32 426.66667 426" style="width: 1em; height: 1em;">
+              <path
+                d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0">
+              </path>
+              <path
+                d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0">
+              </path>
+            </svg><img></span>
+        </a>
+        {% endif %}
+
+
+        <h1 class="u-align-center u-custom-font u-text u-text-body-alt-color u-title u-text-2">即興​​​​旅遊從未如​此​容​​易​​​！
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="u-align-center u-clearfix u-image u-section-2" id="carousel_737c">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-clearfix u-expanded-width-xs u-gutter-6 u-layout-wrap u-layout-wrap-1">
+      <div class="u-gutter-0 u-layout">
+        <div class="u-layout-col">
+          <div class="u-size-30">
+            <div class="u-layout-row">
+              <div
+                class="u-align-center-sm u-align-center-xs u-align-right-lg u-align-right-md u-align-right-xl u-container-style u-layout-cell u-left-cell u-right-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h1 class="u-custom-font u-text u-title u-text-1">
+                    <span style="font-weight: 400;">業界唯一</span>
+                  </h1>
+                  <h1 class="u-custom-font u-text u-text-body-alt-color u-title u-text-2">訂票整合系統</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-size-30">
+            <div class="u-layout-row">
+              <div
+                class="u-align-center u-black u-container-style u-layout-cell u-opacity u-opacity-50 u-right-cell u-size-20 u-layout-cell-2">
+                <div class="u-container-layout u-valign-top u-container-layout-2"><span
+                    class="u-icon u-icon-circle u-spacing-10 u-text-body-alt-color u-icon-1"><svg class="u-svg-link"
+                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 60 60">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6244"></use>
+                    </svg><svg class="u-svg-content" viewBox="0 0 60 60" x="0px" y="0px" id="svg-6244"
+                      style="enable-background:new 0 0 60 60;">
+                      <g>
+                        <path
+                          d="M42.595,0H17.405C14.977,0,13,1.977,13,4.405v51.189C13,58.023,14.977,60,17.405,60h25.189C45.023,60,47,58.023,47,55.595   V4.405C47,1.977,45.023,0,42.595,0z M15,8h30v38H15V8z M17.405,2h25.189C43.921,2,45,3.079,45,4.405V6H15V4.405   C15,3.079,16.079,2,17.405,2z M42.595,58H17.405C16.079,58,15,56.921,15,55.595V48h30v7.595C45,56.921,43.921,58,42.595,58z">
+                        </path>
+                        <path
+                          d="M30,49c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S32.206,49,30,49z M30,55c-1.103,0-2-0.897-2-2s0.897-2,2-2   s2,0.897,2,2S31.103,55,30,55z">
+                        </path>
+                        <path d="M26,5h4c0.553,0,1-0.447,1-1s-0.447-1-1-1h-4c-0.553,0-1,0.447-1,1S25.447,5,26,5z">
+                        </path>
+                        <path d="M33,5h1c0.553,0,1-0.447,1-1s-0.447-1-1-1h-1c-0.553,0-1,0.447-1,1S32.447,5,33,5z">
+                        </path>
+                        <path
+                          d="M56.612,4.569c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414c3.736,3.736,3.736,9.815,0,13.552   c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293   C61.128,16.434,61.128,9.085,56.612,4.569z">
+                        </path>
+                        <path
+                          d="M52.401,6.845c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414c1.237,1.237,1.918,2.885,1.918,4.639   s-0.681,3.401-1.918,4.638c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293   c1.615-1.614,2.504-3.764,2.504-6.052S54.017,8.459,52.401,6.845z">
+                        </path>
+                        <path
+                          d="M4.802,5.983c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0c-4.516,4.516-4.516,11.864,0,16.38   c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414   C1.065,15.799,1.065,9.72,4.802,5.983z">
+                        </path>
+                        <path
+                          d="M9.013,6.569c-0.391-0.391-1.023-0.391-1.414,0c-1.615,1.614-2.504,3.764-2.504,6.052s0.889,4.438,2.504,6.053   c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414   c-1.237-1.237-1.918-2.885-1.918-4.639S7.775,9.22,9.013,7.983C9.403,7.593,9.403,6.96,9.013,6.569z">
+                        </path>
+                      </g>
+                    </svg></span>
+                  <h5 class="u-custom-font u-font-roboto u-text u-text-body-alt-color u-text-3">訂票到出發<br>一分鐘以內
+                  </h5>
+                </div>
+              </div>
+              <div class="u-black u-container-style u-layout-cell u-opacity u-opacity-50 u-size-20 u-layout-cell-3">
+                <div class="u-container-layout u-valign-top u-container-layout-3"><span
+                    class="u-icon u-icon-circle u-spacing-10 u-text-body-alt-color u-icon-2"><svg class="u-svg-link"
+                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5203"></use>
+                    </svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-5203"
+                      style="enable-background:new 0 0 55 55;">
+                      <path
+                        d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17  s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4  c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562  C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829  c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91  v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4  s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665  C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2  S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4  s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2  s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z">
+                      </path>
+                    </svg></span>
+                  <h5 class="u-align-center u-text u-text-body-alt-color u-text-4">規劃超完整<br>開心沒煩惱
+                  </h5>
+                </div>
+              </div>
+              <div
+                class="u-align-center u-black u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-container-style u-layout-cell u-left-cell u-opacity u-opacity-50 u-size-20 u-layout-cell-4">
+                <div class="u-container-layout u-valign-top u-container-layout-4"><span
+                    class="u-icon u-icon-circle u-spacing-10 u-text-body-alt-color u-icon-3"><svg class="u-svg-link"
+                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 58 58">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5009"></use>
+                    </svg><svg class="u-svg-content" viewBox="0 0 58 58" x="0px" y="0px" id="svg-5009"
+                      style="enable-background:new 0 0 58 58;">
+                      <path
+                        d="M50.688,48.222C55.232,43.101,58,36.369,58,29c0-7.667-2.996-14.643-7.872-19.834c0,0,0-0.001,0-0.001  c-0.004-0.006-0.01-0.008-0.013-0.013c-5.079-5.399-12.195-8.855-20.11-9.126l-0.001-0.001L29.439,0.01C29.293,0.005,29.147,0,29,0  s-0.293,0.005-0.439,0.01l-0.563,0.015l-0.001,0.001c-7.915,0.271-15.031,3.727-20.11,9.126c-0.004,0.005-0.01,0.007-0.013,0.013  c0,0,0,0.001-0.001,0.002C2.996,14.357,0,21.333,0,29c0,7.369,2.768,14.101,7.312,19.222c0.006,0.009,0.006,0.019,0.013,0.028  c0.018,0.025,0.044,0.037,0.063,0.06c5.106,5.708,12.432,9.385,20.608,9.665l0.001,0.001l0.563,0.015C28.707,57.995,28.853,58,29,58  s0.293-0.005,0.439-0.01l0.563-0.015l0.001-0.001c8.185-0.281,15.519-3.965,20.625-9.685c0.013-0.017,0.034-0.022,0.046-0.04  C50.682,48.241,50.682,48.231,50.688,48.222z M2.025,30h12.003c0.113,4.239,0.941,8.358,2.415,12.217  c-2.844,1.029-5.563,2.409-8.111,4.131C4.585,41.891,2.253,36.21,2.025,30z M8.878,11.023c2.488,1.618,5.137,2.914,7.9,3.882  C15.086,19.012,14.15,23.44,14.028,28H2.025C2.264,21.493,4.812,15.568,8.878,11.023z M55.975,28H43.972  c-0.122-4.56-1.058-8.988-2.75-13.095c2.763-0.968,5.412-2.264,7.9-3.882C53.188,15.568,55.736,21.493,55.975,28z M28,14.963  c-2.891-0.082-5.729-0.513-8.471-1.283C21.556,9.522,24.418,5.769,28,2.644V14.963z M28,16.963V28H16.028  c0.123-4.348,1.035-8.565,2.666-12.475C21.7,16.396,24.821,16.878,28,16.963z M30,16.963c3.179-0.085,6.3-0.566,9.307-1.438  c1.631,3.91,2.543,8.127,2.666,12.475H30V16.963z M30,14.963V2.644c3.582,3.125,6.444,6.878,8.471,11.036  C35.729,14.45,32.891,14.881,30,14.963z M40.409,13.072c-1.921-4.025-4.587-7.692-7.888-10.835  c5.856,0.766,11.125,3.414,15.183,7.318C45.4,11.017,42.956,12.193,40.409,13.072z M17.591,13.072  c-2.547-0.879-4.991-2.055-7.294-3.517c4.057-3.904,9.327-6.552,15.183-7.318C22.178,5.38,19.512,9.047,17.591,13.072z M16.028,30  H28v10.038c-3.307,0.088-6.547,0.604-9.661,1.541C16.932,37.924,16.141,34.019,16.028,30z M28,42.038v13.318  c-3.834-3.345-6.84-7.409-8.884-11.917C21.983,42.594,24.961,42.124,28,42.038z M30,55.356V42.038  c3.039,0.085,6.017,0.556,8.884,1.4C36.84,47.947,33.834,52.011,30,55.356z M30,40.038V30h11.972  c-0.113,4.019-0.904,7.924-2.312,11.58C36.547,40.642,33.307,40.126,30,40.038z M43.972,30h12.003  c-0.228,6.21-2.559,11.891-6.307,16.348c-2.548-1.722-5.267-3.102-8.111-4.131C43.032,38.358,43.859,34.239,43.972,30z   M9.691,47.846c2.366-1.572,4.885-2.836,7.517-3.781c1.945,4.36,4.737,8.333,8.271,11.698C19.328,54.958,13.823,52.078,9.691,47.846  z M32.521,55.763c3.534-3.364,6.326-7.337,8.271-11.698c2.632,0.945,5.15,2.209,7.517,3.781  C44.177,52.078,38.672,54.958,32.521,55.763z">
+                      </path>
+                    </svg></span>
+                  <h5 class="u-custom-font u-font-open-sans u-text u-text-5">想去哪就去<br>全台無限制
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="u-clearfix u-gradient u-section-3" id="carousel_93b3">
+  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1" style="margin:100px auto;">
+    <div
+      class="u-clearfix u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gutter-30 u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div
+            class="u-container-style u-layout-cell u-left-cell u-size-30-lg u-size-30-xl u-size-35-md u-size-35-sm u-size-35-xs u-layout-cell-1">
+            <div class="u-container-layout u-valign-top-xs u-container-layout-1">
+              <h2 class="u-align-center u-custom-font u-text u-text-1">我們提供什麼服務？</h2>
+              <p class="u-text u-text-2"> 說走就走，是由 SharksLccnet
+                團隊開發的自動訂票系統。旅行前的繁雜訂票程序，常造成多數人還沒開始就放棄了。因此我們決定用python自動化的方式縮短訂票所需時間。首先回答準備好的幾個問題，讓我們了解您此次旅行的需求，最後，交給程式幫您做剩下的事情，也就是訂車票和住宿。<br>
+                <br>
+                <span class="u-text-palette-2-base"><b>*系統在成功訂票後，會顯示幫您訂的車次(台鐵/高鐵)與飯店名稱*</b>
+                  <br><b>*本站不提供代領票，或是寄票服務，請自行依指示完成後續取票*</b>
+                </span>
+              </p>
+              <a href="https://nicepage.com/k/projects-website-templates"
+                class="u-btn u-button-style u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-1">sharkslccent
+                團隊成員介紹&nbsp;<span class="u-icon u-text-palette-1-base"><svg class="u-svg-content"
+                    viewBox="0 -32 426.66667 426" style="width: 1em; height: 1em;">
+                    <path
+                      d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0">
+                    </path>
+                    <path
+                      d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0">
+                    </path>
+                  </svg><img></span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="u-align-left u-container-style u-layout-cell u-right-cell u-size-25-md u-size-25-sm u-size-25-xs u-size-30-lg u-size-30-xl u-layout-cell-2">
+            <div class="u-container-layout u-valign-middle-xl">
+              <img class="u-expanded-width-xs u-image u-image-round u-radius-38 u-image-1"
+                src="{% static 'images/surface-C-o9HNzQ_rA-unsplash.jpeg' %}" alt="" data-image-width="835" data-image-height="742">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="u-align-center u-clearfix u-image u-shading u-section-4" id="carousel_23e9" data-image-width="1600"
+  data-image-height="860">
+  <div class="u-clearfix u-sheet u-sheet-1" style="padding-top:auto;padding-bottom:auto;margin-top:160px;">
+    <h2 class="u-custom-font u-text u-text-1" style="color:#fff;font-size:35px;">三種方案</h2>
+    <div class="u-clearfix u-gutter-20 u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row" style="margin-top:50px;">
+          <div class="u-container-style u-image u-image-default u-layout-cell u-left-cell u-shading u-size-20 u-image-1"
+            data-image-width="1600" data-image-height="1067">
+            <div class="u-border-1 u-border-custom-color-15 u-container-layout u-valign-top u-container-layout-1" style="box-shadow: inset 9px 9px 25px #000;border:transparent !important;">
+              <h2 class="u-align-center u-custom-font u-text u-text-3">小資輕旅</h2>
+              <p class="u-align-left u-text u-text-10" style="font-size:12px;color:#ccc !important;">
+                <span>不用花大錢也能開心玩，這個方案適合想省錢又想​全台暢玩的您，幫您規劃最便宜的體驗。誰說旅行不能花得很少呢？</span></p>
+              <p class="u-align-left u-custom-font u-text u-text-5" style="color:#eee !important;">❀&nbsp; &nbsp;台鐵單程車票(乙張)<br>❀&nbsp; &nbsp;房間住宿(包括青旅)
+                <br>❀&nbsp; &nbsp;篩選總價格最低組合<br>
+                <span>
+                  ❀&nbsp; &nbsp;最短時間抵達目的地</span>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-image u-image-default u-layout-cell u-shading u-size-20 u-image-2"
+            data-image-width="1920" data-image-height="1280">
+            <div class="u-border-1 u-border-custom-color-15 u-container-layout u-container-layout-2"  style="box-shadow: inset 9px 9px 25px #000;border:0 !important;" >
+              <h2 class="u-align-center u-custom-font u-text u-text-6">高CP首選</h2>
+              <p class="u-align-left u-text u-text-10" style="font-size:12px;color:#ccc !important;"><span>您的預算比較寬裕，同時希望錢花在刀口上。此方案給最懂玩的您，您每一分錢都花在舒適與享受的極大化上。</span></p>
+              <p class="u-align-left u-text u-text-8" style="color:#eee !important;">❀&nbsp; &nbsp;台鐵單程車票( 乙張 )<br>❀&nbsp; &nbsp;<span>保證三星級以上旅店</span>​
+                <br>❀&nbsp; &nbsp;篩選性價比最高組合<br>❀&nbsp; &nbsp;最短時間抵達目的地<br>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-image u-layout-cell u-right-cell u-shading u-size-20 u-image-3"
+            data-image-width="1600" data-image-height="951">
+            <div class="u-border-1 u-border-custom-color-15 u-container-layout u-valign-top u-container-layout-3" style="box-shadow: inset 9px 9px 25px #000;border:transparent !important;">
+              <h2  class="u-align-center u-custom-font u-text u-text-9">豪華極享</h2>
+              <p class="u-align-left u-text u-text-10" style="font-size:12px;color:#ccc !important;"><span>預算不是問題，給只想要最好旅行體驗的您。此專案對於品質是絕不妥協的，在您旅行地點找出最奢華的飯店住宿。</span></p>
+              <p class="u-align-left u-custom-font u-text u-text-11" style="color:#eee !important;">❀&nbsp; <span>高鐵車票單程(乙張)</span><br>❀&nbsp;&nbsp;<span>保證五星級飯店</span> 
+               <br>❀&nbsp;&nbsp;篩選總品質最高組合<br>❀&nbsp;&nbsp;最短時間抵達目的地
+              </p>
+            </div>
+          </div>
+          <p class="u-align-center-xs u-custom-font u-text u-text-2" style="color:#ccc !important;">
+            <span style="font-size:15px;">下單前，請確認選擇的方案是否符合您的旅遊需求，如有疑問請聯絡客服幫您解答。&emsp;<br></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="carousel_3a87" class="u-carousel u-slide u-block-9554-1" data-u-ride="carousel" data-interval="5000">
+  <ol class="u-absolute-hcenter u-carousel-indicators u-block-9554-2">
+    <li data-u-target="#carousel_3a87" data-u-slide-to="0" class="u-active u-grey-30"></li>
+    <li data-u-target="#carousel_3a87" class="u-grey-30" data-u-slide-to="1"></li>
+    <li data-u-target="#carousel_3a87" class="u-grey-30" data-u-slide-to="2"></li>
+    <li data-u-target="#carousel_3a87" class="u-grey-30" data-u-slide-to="3"></li>
+  </ol>
+  <div class="u-carousel-inner" role="listbox">
+    <div class="u-active u-carousel-item u-clearfix u-white u-section-6-1">
+      <div class="u-clearfix u-sheet u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-sheet-1" style="margin:100px 0;">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-1">
+              "一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一"
+            </p>
+            <div alt="" class="u-align-left u-image u-image-circle u-image-1" src=""></div>
+            <h5 class="u-align-center u-custom-font u-text u-text-body-color u-text-2">葉駿成</h5>
+            <h6 class="u-align-center u-custom-font u-text u-text-3">台灣大學 戲劇學系</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-carousel-item u-clearfix u-section-6-2">
+      <div class="u-clearfix u-sheet u-sheet-1" style="margin:100px 0;">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-1">
+              "一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一​二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一"
+            </p>
+            <div alt="" class="u-align-left u-image u-image-circle u-image-1" src=""></div>
+            <h5 class="u-align-center u-custom-font u-text u-text-body-color u-text-2">李承祐</h5>
+            <h6 class="u-align-center u-custom-font u-text u-text-3">某某大學 某某學系</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-carousel-item u-clearfix u-section-6-3">
+      <div class="u-clearfix u-sheet u-sheet-1" style="margin:100px 0;">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-1">
+              "一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一"
+            </p>
+            <div alt="" class="u-align-left u-image u-image-circle u-image-1" src=""></div>
+            <h5 class="u-align-center u-custom-font u-text u-text-body-color u-text-2">葉晉廷</h5>
+            <h6 class="u-align-center u-custom-font u-text u-text-3"> 某某大學 某某學系</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-carousel-item u-clearfix u-section-6-4">
+      <div class="u-clearfix u-sheet u-sheet-1" style="margin:100px 0;">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-1">
+              "一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一"
+            </p>
+            <div alt="" class="u-align-left u-image u-image-circle u-image-1" src=""></div>
+            <h5 class="u-align-center u-custom-font u-text u-text-body-color u-text-2">林濡霖</h5>
+            <h6 class="u-align-center u-custom-font u-text u-text-3"> 某某大學 某某學系</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-25 u-block-9554-3"
+    href="#carousel_3a87" role="button" data-u-slide="prev">
+    <span aria-hidden="true">
+      <svg viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
+      </svg>
+    </span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-25 u-block-9554-4"
+    href="#carousel_3a87" role="button" data-u-slide="next">
+    <span aria-hidden="true">
+      <svg viewBox="0 0 477.175 477.175">
+        <path
+          d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
+        </path>
+      </svg>
+    </span>
+    <span class="sr-only">Next</span>
+  </a>
+</section>
+<section class="u-align-center u-clearfix u-white u-section-5" id="carousel_6f6c">
+  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <img alt="" class="u-expanded-width-xs u-image u-image-default u-opacity u-opacity-55 u-image-1"
+      data-image-width="1600" data-image-height="1067" src="{% static 'images/henry-co-3JFVNo4ukKQ-unsplash.jpeg' %}">
+    <h1 class="u-custom-font u-text u-text-1">聯絡我們</h1>
+    <p class="u-custom-font u-text u-text-2">請在下方填寫您的問題，客服將盡快跟您聯絡。</p>
+    <div class="u-form u-white u-form-1">
+
+      <form action="#" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form"
+        style="padding: 0;background-color: transparent !important;" source="email" name="form">
+        <div class="u-form-group u-form-name u-form-partition-factor-3 u-form-group-1">
+          <label for="name-d70e" class="u-form-control-hidden u-label">Name</label>
+          <input type="text" placeholder="輸入您的名字" id="name-d70e" name="name"
+            class="u-border-2 u-border-custom-color-15 u-input u-input-rectangle u-white" required="">
+        </div>
+        <div class="u-form-address u-form-group u-form-partition-factor-3 u-form-group-2">
+          <label for="address-2127" class="u-form-control-hidden u-label">Address</label>
+          <input type="text" placeholder="信件主旨" id="address-2127" name="address"
+            class="u-border-2 u-border-custom-color-15 u-input u-input-rectangle u-white" required="">
+        </div>
+        <div class="u-form-email u-form-group u-form-partition-factor-3 u-form-group-3">
+          <label for="email-d70e" class="u-form-control-hidden u-label">Email</label>
+          <input type="email" placeholder="輸入電郵信箱" id="email-d70e" name="email"
+            class="u-border-2 u-border-custom-color-15 u-input u-input-rectangle u-white" required="">
+        </div>
+        <div class="u-form-group u-form-message u-form-group-4">
+          <label for="message-d70e" class="u-form-control-hidden u-label">Message</label>
+          <textarea placeholder="告訴我們您的想法" rows="4" cols="50" id="message-d70e" name="message"
+            class="u-border-2 u-border-custom-color-15 u-input u-input-rectangle u-white" required=""></textarea>
+        </div>
+        <div class="u-form-agree u-form-group u-form-group-5">
+          <input type="checkbox" id="agree-be5a" name="agree" class="u-agree-checkbox" required="">
+          <label for="agree-be5a" class="u-label"> 我已詳閱完全瞭解上述聲明內容</label>
+        </div>
+        <div class="u-align-center u-form-group u-form-submit u-form-group-6">
+          <a href="#"
+            class="u-border-1 u-border-custom-color-15 u-border-hover-custom-color-15 u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-hover-custom-color-17 u-radius-50 u-text-custom-color-16 u-white u-btn-1">確認送出<br>
+          </a>
+          <input type="submit" value="submit" class="u-form-control-hidden">
+        </div>
+        <div class="u-form-send-message u-form-send-success">感謝您的回覆！訊息已送出。 </div>
+        <div class="u-form-send-error u-form-send-message">無法傳送您的訊息，請重新嘗試！ </div>
+        <input type="hidden" value="" name="recaptchaResponse">
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

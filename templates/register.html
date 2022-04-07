@@ -1,0 +1,472 @@
+{% extends 'baseafter.html' %}
+{% load static %}
+{% block inhead %}
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'loginfonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginutil.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginmain.css' %}">
+<!--===============================================================================================-->
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+    .column5{
+        float:left;
+        width:5%;
+    }
+    .column15{
+        float:left;
+        width:15%;
+    }
+    .column17{
+        float:left;
+        width:17%;
+    }
+    .column18{
+        float:left;
+        width:18%;
+    }
+    .column19{
+        float:left;
+        width:19%;
+    }
+    .column20{
+        float:left;
+        width:20%;
+    }
+    .column25{
+        float:left;
+        width:25%;
+    }
+    .column26{
+        float:left;
+        width:26%;
+    }
+    .column27 {
+        float:left;
+        width:27%;
+    }
+    .column30 {
+        float:left;
+        width:30%;
+    }
+    .column32 {
+        float:left;
+        width:32%;
+    }
+    .column35 {
+        float:left;
+        width:35%;
+    }
+    .column38 {
+        float:left;
+        width:38%;
+    }
+    .column40{
+        float:left;
+        width:40%;
+    }
+    .column45{
+        float:left;
+        width:45%;
+    }
+    .column56 {
+        float:left;
+        width:56%;
+    }
+    .column60{
+        float:left;
+        width:60%;
+    }
+    .column70{
+        float:left;
+        width:70%;
+    }
+    .column75{
+        float:left;
+        width:75%;
+    }
+    .column100 {
+        float: left;
+        width: 100%;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    label{
+  vertical-align: middle;
+}
+
+input[type="radio"]{
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color:#999999;
+    font-family:Arial, sans-serif;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+input[type="radio"]:checked + label span {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
+SELECT {
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+}
+::-webkit-calendar-picker-indicator{
+        margin-left: -12px;
+        margin-top:1px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form  name="registerform" autocomplete="off" action="." method="POST"  
+                    style="padding-top:15px;background-color: #fff;" class="login100-form validate-form">
+                <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                {% csrf_token %}
+                <p style="text-align:center;margin:15px auto 5px;">
+                    <img src="{% static 'images/icons8-shark-50.png' %}" style="filter:invert(100%);width:35px;">
+                </p>
+                <span style="font-size:50px;padding-bottom:10px;" class="login100-form-title p-b-20">
+                   現在就加入
+                </span>
+
+                <!-- (註冊) mName 中文名字  -->
+                <!-- (註冊) mPersonid 身分證字號 -->
+                <div class="row" style="background:#ffebeb;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#fcb4b4;">請確實填寫個人基本資料，以保障個人權益！</div>
+                </div>
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column" style="padding:5px 5px 0 15px;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input  autocomplete="off" style="font-size:12px;color: #c00;font-weight: bold;" 
+                                    class="input100" type="text" id="mName" name="mName"
+                                    oninput="this.value = this.value.replace(/[0-9a-zA-Z.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                    maxlength="10"/>
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">中文姓名<span style="color:#a30000;"> *</span></span>
+                        </div>    
+                    </div>
+                    <div class="column" style="padding:5px 15px 0 0;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#c00;font-weight: bold;" class="input100" type="text" id="mPersonid" name="mPersonid" 
+                            pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$" maxlength="10"
+                            oninvalid="setCustomValidity('輸入格式:大寫字母+數字')" oninput="try{setCustomValidity('')}catch(e){}">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">身分證字號<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- (註冊) mLast 英文姓氏 -->
+                <!-- (註冊) mFirst 英文名字 -->
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column" style="padding:5px 5px 0 15px;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input  autocomplete="new-password" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" type="text" name="mLast"
+                                    oninput="this.value = this.value.replace(/[^a-zA-Z.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                    maxlength="20">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">姓氏 (英文)<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column" style="padding:5px 15px 0 0;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input  autocomplete="new-password" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" type="text" name="mFirst"
+                                    oninput="this.value = this.value.replace(/[^a-zA-Z.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                    maxlength="20">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">名字 (英文)<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- (註冊) mPhone 身分證字號 -->
+                <!-- (註冊) mSex 性別-->
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column30" style="padding:5px 0 0 15px;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" 
+                                type="tel" name="mPhone" id="mPhone"
+                                pattern="09[0-9]{2}-[0-9]{3}-[0-9]{3}"
+                                oninvalid="setCustomValidity('輸入格式:09開頭');" oninput="try{setCustomValidity('');this.value = this.value.replace(/[^0-9-.]/g, '').replace(/(\..*?)\..*/g, '$1');}catch(e){}"
+                                maxlength="12">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">手機號碼<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column35" style="padding:5px 0 0 5px;">
+                        <div style="padding-bottom:5px;padding-left:10%;background: #fff;overflow:hidden;white-space: nowrap;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input type="radio" name="mSex" value="M" id="male" checked="checked">
+                            <label for="male" style="margin-right:10px;"><span></span>男</label>
+                            <input type="radio" name="mSex" id="female" value="F">
+                            <label for="female"><span></span>女</label>     
+                        </div>
+                    </div>
+                    <div class="column35" style="padding:5px 15px 0 5px">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input  autocomplete="off" style="font-size:12px;color:#c00;font-weight: bold;" 
+                                    class="input100" type="tel" name="mBirthday" id="mBirthday"
+                                    pattern="^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}$" 
+                                    maxlength="10"
+                                    oninvalid="setCustomValidity('輸入格式:YYYY/MM/DD')" 
+                                    oninput="try{setCustomValidity('');this.value = this.value.replace(/[^0-9/.]/g, '').replace(/(\..*?)\..*/g, '$1');}catch(e){}"/>
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">出生日期<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- (註冊) mCity 居住縣市 -->
+                <!-- (註冊) mAddress 地址 -->
+                <div class="row" style="background:#ffebeb;">
+                    <div class="column25" style="padding:5px 0 0 15px;">
+                        <div style="background:#fff;" class="wrap-input101">
+                            <input  autocomplete="new-password" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" 
+                                    type="text" name="postalCode"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                    maxlength="5">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">郵遞區號</span>
+                        </div>
+                    </div>
+                    <div class="column19" style="padding:5px 0 0 5px;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="new-password" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" type="text" name="mCity">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">城市<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column56" style="padding:5px 15px 0 5px;">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color: #c00;font-weight: bold;" class="input100" type="text" name="mAddress">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">地址<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- (註冊) mBirthday 生日-->
+                <!-- (註冊) postalCode 郵遞區號-->
+                <!-- (註冊) mEmail 信箱 -->
+                <!-- (註冊) mPassword 密碼 -->
+                <div class="row" style="background:#e7fde9;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#96e59c;">建立帳戶帳號與密碼</div>
+                </div>
+                <div class="row" style="background:#e7fde9;"> 
+                    <div class="column30" style="padding:5px 0 0 15px">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#008009;font-weight: bold;" class="input100" type="text" id="nickname" name="nickname">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">使用者暱稱<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column70" style="padding:5px 15px 0 5px">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#008009;font-weight: bold;" class="input100" type="text" name="mEmail">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">電郵信箱<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="background:#e7fde9;"> 
+                    <div class="column100" style="padding:5px 15px 0 15px">
+                        <div style="background:#fff;" class="wrap-input101 validate-input" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#008009;font-weight: bold;" class="input100" type="password" name="mPassword">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">密碼<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row" style="background:#ebf3ff;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#bec4ce;">我們不會從您的卡片扣款，只需要您的卡片資料確保會員資格</div>
+                </div>
+                <!-- (註冊) mCard 信用卡卡號 -->
+                <!-- (註冊) mSafe 安全碼 -->
+                <div class="row" style="background:#ebf3ff;">
+                    <div class="column45" style="padding:5px 0 0 15px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" class="input100" type="tel" 
+                            id="mCard" name="mCard" maxlength="19"
+                            oninput="this.value = this.value.replace(/[^0-9-.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            pattern="^4[0-9]{3}-[0-9]{4}-[0-9]{4}-[0-9]{4}$">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101">信用卡卡號<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column25" style="padding:5px 0 0 5px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" class="input100" type="password" name="mSafe"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="3">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">CVC安全碼<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                    <div class="column30" style="padding:5px 15px 0 5px;">
+                        <div class="wrap-input101 validate-input" style="background:#fff;margin-bottom:0;" data-validate="必填">
+                            <input autocomplete="off" style="font-size:12px;color:#0071c2;font-weight: bold;" class="input100" type="text" name="creditName">
+                            <span class="focus-input100"></span>
+                            <span class="label-input101" style="overflow:hidden;white-space: nowrap;">持卡人姓名<span style="color:#a30000;"> *</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="background:#ebf3ff;">
+                    <div style="padding-left:20px;padding-top:5px;font-size:12px;color:#bec4ce;">有效期限</div>
+                </div>
+                <!-- (註冊) creditmonth 卡片有效日期(月份) -->
+                <!-- (註冊) credityear 卡片有效日期(年份) -->
+                <!-- (註冊) creditName 持卡人姓名 -->
+                <div class="row" style="background:#ebf3ff;margin-bottom:15px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+                    <div class="column25" style="padding:5px 10px 0 15px;">
+                        <select name="creditmonth" class="wrap-input101" style="padding-bottom:7px;padding-left:22px;background-color:#fff;">
+                            {% for i in creditmonthlist %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="column5">
+                        <div style="padding-top:5px;font-size:25px;text-align:center;color:#bec4ce;">/</div>
+                    </div>
+                    <div class="column25" style="padding:5px 0 0 10px;">
+                        <select name="credityear" class="wrap-input101" style="padding-bottom:7px;padding-left:22px;background-color:#fff;">
+                            {% for i in credityearlist %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div id="errormessage" style="color:red;font-size:12px;margin:-10px 0 5px 10px;" hidden>使用者暱稱已有人使用，請重新輸入!</div>
+                <div class="row">
+                    <div class="column" style="padding:0 10px;">
+                        <div style="margin-bottom:15px;" class="container-login100-form-btn">
+                            <input style="font-weight:bold;" type="submit" class="login100-form-btn" value="註冊">
+                        </div>
+                    </div>
+                    <div class="column" style="padding:0 10px;">
+                        <div class="container-login100-form-btn">
+                            <button type="button" class="login100-form-btn login100down-btn" onclick="window.location='/login/' ">
+                                <strong>已經有帳戶了嗎？</strong>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </form>
+            <div class="login100-more" style="background-image: url('../static/images/joel-fulgencio-FouVQ5dYY6g-unsplash.jpeg');">
+            </div>
+            <input type="hidden" id="myVar" name="variable" value="{{ userslist }}">
+        </div>
+    </div>
+</div>
+
+<!--===============================================================================================-->
+<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %} "></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'js/loginmain.js' %} "></script>
+<script>
+    $('#mCard').keyup(function() {
+      let txt = $(this).val().split("-").join(""); // remove hyphens
+      if (txt.length > 0) {
+        txt = txt.match(new RegExp('.{1,4}', 'g')).join("-");
+      }
+      $(this).val(txt);
+    });
+    document.getElementById('mPhone').addEventListener("keyup", function(){
+        txt = this.value;
+        const key = event.key;
+        if(key === "Backspace" || key === "Delete"){
+            if (txt[-1] == "-"){
+                this.value = this.value - "/";
+            }
+        }
+        else if (txt.length==4 || txt.length==8){
+            this.value=this.value+"-";
+        }
+    });
+    document.getElementById('mBirthday').addEventListener("keyup",function(){
+        txt = this.value;
+        const key = event.key;
+        if(key === "Backspace" || key === "Delete"){
+            if (txt[-1] == "/"){
+                this.value = this.value - "/";
+            }
+
+        }
+        else if (txt.length==4 || txt.length==7){
+            this.value = this.value + "/";    
+        }
+    });
+</script>
+<script>
+    nickname = document.getElementById("nickname")
+    errormessage = document.getElementById("errormessage")
+    nickname.addEventListener('focusout',function(){
+        txt = this.value;
+        var myVar = document.getElementById("myVar").value;
+        var found = false;
+        myVar = myVar.split(/[']/)
+        for(var i=0; i<myVar.length; i++){
+            if (txt == myVar[i]){
+                errormessage.removeAttribute("hidden");
+                found = true;
+            }
+        }
+        if (!found){
+            errormessage.setAttribute("hidden",true)
+        }
+    })
+</script>
+{% endblock %}
